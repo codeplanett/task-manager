@@ -5,6 +5,7 @@ import { useState } from "react"
 import AddTask from './components/AddTask';
 
 function App() {
+  const [showAdd, setShowAdd] = useState(true)
   const [tasks, setTasks] = useState( [
     {
       text : "hello",
@@ -36,8 +37,8 @@ const toggleReminder = (id) => {
 
   return (
     <div className="container">
-      <Header />
-      <AddTask onAdd = {addTask} />
+      <Header onAdd={() => setShowAdd(!showAdd)}/>
+      {showAdd ? (<AddTask onAdd = {addTask} />) : ""}
       <Tasks 
       tasks = {tasks} 
       onDelete = {deleteTask}

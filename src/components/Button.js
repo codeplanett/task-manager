@@ -1,14 +1,11 @@
 import PropTypes from 'prop-types'
 
 
-function Button({ text, color}){
-     const alerting = function(){
-        alert("Hello world")
-     }
+function Button({ text, color, onAdd}){
 
 
     return (
-        <button onClick = {alerting} style = {{ backgroundColor : color }} className = "btn">{text}</button>
+        <button onClick = {onAdd} style = {{ backgroundColor : color }} className = "btn">{text}</button>
     )
 }
 
