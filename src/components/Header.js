@@ -4,7 +4,7 @@ function Header(props){
     return (
         <header className = "header">
             <h2>Task Manager</h2>
-            <Button />
+            <Button onAdd = {props.onAdd}/>
         </header>
     
     )
